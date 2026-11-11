@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="AMA — découvre tes animés préférés, films, séries et avis.">
+
+    <title>AMA — Univers Anime</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BARRE DE NAVIGATION -->
+    <header class="site-header">
+
+        <a class="brand" href="#" data-page-link="accueil">
+            AMA<span>.</span>
+        </a>
+
+        <nav class="main-nav">
+
+            <button class="nav-link active" data-page-link="accueil">
+                ACCUEIL
+            </button>
+
+            <button class="nav-link" data-page-link="films">
+                FILMS
+            </button>
+
+            <button class="nav-link" data-page-link="series">
+                SÉRIES
+            </button>
+
+            <button class="nav-link" data-page-link="avis">
+                AVIS
+            </button>
+
+        </nav>
+
+        <!-- RECHERCHE ET BOUTON CATALOGUE -->
+        <div class="header-tools">
+
+            <label class="search-box">
+                <span>⌕</span>
+
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Rechercher un animé..."
+                    autocomplete="off"
+                >
+            </label>
+
+            <button
+                class="plus-button"
+                id="catalogToggle"
+                aria-label="Ouvrir le catalogue"
+                aria-expanded="false"
+            >
+                +
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- TITRE ET PHRASE DÉFILANTE -->
+        <section class="intro">
+
+            <p class="eyebrow">
+                TON UNIVERS ANIME COMMENCE ICI
+            </p>
+
+            <h1>
+                Bienvenue dans <span>AMA</span>
+            </h1>
+
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span>
+                        BIENVENUE SUR AMA ✦
+                        BIENVENUE SUR AMA ✦
+                        BIENVENUE SUR AMA ✦
+                        BIENVENUE SUR AMA ✦
+                    </span>
+                </div>
+            </div>
+
+            <p class="intro-copy">
+                Explore des mondes extraordinaires,
+                trouve ton prochain coup de cœur
+                et partage tes avis.
+            </p>
+
+        </section>
+
+
+        <!-- CATALOGUE ET FILTRES -->
+        <aside class="catalog-panel" id="catalogPanel" hidden>
+
+            <div class="catalog-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        PERSONNALISE TA DÉCOUVERTE
+                    </p>
+
+                    <h2>Catalogue</h2>
+                </div>
+
+                <button class="close-panel" id="closeCatalog">
+                    ×
+                </button>
+
+            </div>
+
+            <div class="filter-grid">
+
+                <label>
+                    Genre
+
+                    <select id="genreFilter">
+                        <option value="all">Tous les genres</option>
+                        <option>Action</option>
+                        <option>Romance</option>
+                        <option>Aventure</option>
+                        <option>Comédie</option>
+                        <option>Fantastique</option>
+                        <option>Drame</option>
+                    </select>
+                </label>
+
+
+                <label>
+                    Langue
+
+                    <select id="languageFilter">
+                        <option value="all">Toutes les langues</option>
+                        <option value="Français">Français</option>
+                        <option value="Japonais">Japonais</option>
+                        <option value="Anglais">Anglais</option>
+                    </select>
+                </label>
+
+
+                <label>
+                    Type
+
+                    <select id="typeFilter">
+                        <option value="all">Films et séries</option>
+                        <option value="Film">Film</option>
+                        <option value="Série">Série</option>
+                    </select>
+                </label>
+
+            </div>
+
+            <div class="panel-actions">
+
+                <button class="button button-primary" id="applyFilters">
+                    Appliquer les filtres
+                </button>
+
+                <button class="button button-ghost" id="resetFilters">
+                    Réinitialiser
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- PAGE ACCUEIL -->
+        <section class="page-section active" id="page-accueil">
+
+            <!-- GRANDE VITRINE -->
+            <section class="hero">
+
+                <img
+                    class="hero-image"
+                    src="https://images.unsplash.com/photo-1578632767115-351724d5b5b8?auto=format&fit=crop&w=1800&q=85"
+                    alt="Illustration d'ambiance anime"
+                >
+
+                <div class="hero-shade"></div>
+
+                <div class="hero-content">
+
+                    <span class="pill">
+                        À LA UNE
+                    </span>
+
+                    <p class="hero-kicker">
+                        L'ANIME DU MOMENT
+                    </p>
+
+                    <h2>
+                        Un monde<br>
+                        à découvrir.
+                    </h2>
+
+                    <p>
+                        Des aventures inoubliables t'attendent.
+                        Trouve ton prochain animé préféré sur AMA.
+                    </p>
+
+                    <button
+                        class="button button-light"
+                        data-scroll-to="popular"
+                    >
+                        Explorer les animés <span>→</span>
+                    </button>
+
+                </div>
+
+                <div class="hero-stamp">
+                    AMA<br>
+                    <small>ANIME CLUB</small>
+                </div>
+
+            </section>
+
+
+            <!-- ANIMES POPULAIRES -->
+            <section class="content-section" id="popular">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">FAIS TON CHOIX</p>
+                        <h2>À découvrir <span>✦</span></h2>
+                    </div>
+
+                    <p class="section-note" id="resultCount">
+                        Une sélection pour toi
+                    </p>
+
+                </div>
+
+                <div class="anime-grid" id="animeGrid"></div>
+
+                <p class="empty-state" id="emptyState" hidden>
+                    Aucun animé ne correspond à ta recherche.
+                    Essaie d'autres filtres.
+                </p>
+
+            </section>
+
+
+            <!-- GENRES -->
+            <section class="genre-strip">
+
+                <div>
+                    <p class="eyebrow">SELON TON ENVIE</p>
+                    <h2>Explorer par genre</h2>
+                </div>
+
+                <div class="genre-chips">
+
+                    <button class="genre-chip" data-genre="Action">
+                        ⚔ Action
+                    </button>
+
+                    <button class="genre-chip" data-genre="Romance">
+                        ♡ Romance
+                    </button>
+
+                    <button class="genre-chip" data-genre="Aventure">
+                        ✦ Aventure
+                    </button>
+
+                    <button class="genre-chip" data-genre="Comédie">
+                        ☻ Comédie
+                    </button>
+
+                    <button class="genre-chip" data-genre="Fantastique">
+                        ✧ Fantastique
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- PAGE FILMS -->
+        <section class="page-section" id="page-films">
+
+            <div class="page-title">
+
+                <p class="eyebrow">
+                    LE GRAND ÉCRAN VERSION ANIME
+                </p>
+
+                <h2>Films <span>AMA</span></h2>
+
+                <p>
+                    Des histoires complètes à savourer
+                    du début à la fin.
+                </p>
+
+            </div>
+
+            <div class="anime-grid" id="filmsGrid"></div>
+
+        </section>
+
+
+        <!-- PAGE SERIES -->
+        <section class="page-section" id="page-series">
+
+            <div class="page-title">
+
+                <p class="eyebrow">
+                    ÉPISODE APRÈS ÉPISODE
+                </p>
+
+                <h2>Séries <span>AMA</span></h2>
+
+                <p>
+                    Retrouve les séries qui te feront
+                    enchaîner les épisodes.
+                </p>
+
+            </div>
+
+            <div class="anime-grid" id="seriesGrid"></div>
+
+        </section>
+
+
+        <!-- PAGE AVIS -->
+        <section class="page-section" id="page-avis">
+
+            <div class="page-title">
+
+                <p class="eyebrow">
+                    LA COMMUNAUTÉ AMA
+                </p>
+
+                <h2>Les avis <span>✦</span></h2>
+
+                <p>
+                    Lis les impressions des autres fans
+                    et partage la tienne.
+                </p>
+
+            </div>
+
+
+            <div class="review-layout">
+
+                <!-- ANIME ET SES INFORMATIONS -->
+                <article class="review-feature">
+
+                    <img
+                        src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg"
+                        alt="Affiche de Demon Slayer"
+                    >
+
+                    <div class="review-feature-info">
+
+                        <span class="pill">
+                            ANIME À L'AFFICHE
+                        </span>
+
+                        <h3>Demon Slayer</h3>
+
+                        <p>
+                            Série · Action, Fantastique · 2019
+                        </p>
+
+                        <div class="big-rating">
+                            ★ 9,2 <small>/ 10</small>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- COMMENTAIRES -->
+                <div class="reviews-column">
+
+                    <div class="reviews-heading">
+
+                        <div>
+                            <p class="eyebrow">
+                                CE QU'EN PENSE LA COMMUNAUTÉ
+                            </p>
+
+                            <h3>Avis des utilisateurs</h3>
+                        </div>
+
+                        <span class="review-count">
+                            3 avis
+                        </span>
+
+                    </div>
+
+
+                    <!-- FORMULAIRE POUR PUBLIER UN AVIS -->
+                    <form class="review-form" id="reviewForm">
+
+                        <label for="reviewName">
+                            Ton pseudo
+                        </label>
+
+                        <input
+                            id="reviewName"
+                            maxlength="24"
+                            placeholder="Ex. AnimeFan"
+                            required
+                        >
+
+
+                        <label for="reviewRating">
+                            Ta note sur 10
+                        </label>
+
+                        <select id="reviewRating">
+
+                            <option value="10">10 / 10</option>
+                            <option value="9" selected>9 / 10</option>
+                            <option value="8">8 / 10</option>
+                            <option value="7">7 / 10</option>
+                            <option value="6">6 / 10</option>
+                            <option value="5">5 / 10</option>
+                            <option value="4">4 / 10</option>
+                            <option value="3">3 / 10</option>
+                            <option value="2">2 / 10</option>
+                            <option value="1">1 / 10</option>
+
+                        </select>
+
+
+                        <label for="reviewText">
+                            Ton commentaire
+                        </label>
+
+                        <textarea
+                            id="reviewText"
+                            rows="3"
+                            maxlength="400"
+                            placeholder="Qu'as-tu pensé de cet animé ?"
+                            required
+                        ></textarea>
+
+
+                        <button class="button button-primary" type="submit">
+                            Publier mon avis ↗
+                        </button>
+
+                    </form>
+
+
+                    <!-- LISTE DES AVIS -->
+                    <div class="review-list" id="reviewList">
+
+                        <article class="review-card">
+
+                            <div class="review-top">
+                                <strong>MangaFan</strong>
+                                <span>★ 10/10</span>
+                            </div>
+
+                            <p>
+                                Une animation magnifique et une
+                                histoire très touchante. J'ai adoré !
+                            </p>
+
+                        </article>
+
+
+                        <article class="review-card">
+
+                            <div class="review-top">
+                                <strong>Yuki_07</strong>
+                                <span>★ 9/10</span>
+                            </div>
+
+                            <p>
+                                Les personnages sont attachants
+                                et les combats impressionnants.
+                            </p>
+
+                        </article>
+
+
+                        <article class="review-card">
+
+                            <div class="review-top">
+                                <strong>OtakuLuna</strong>
+                                <span>★ 8/10</span>
+                            </div>
+
+                            <p>
+                                Une très belle série,
+                                avec beaucoup d'émotion.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIED DE PAGE -->
+    <footer class="site-footer">
+
+        <a class="brand footer-brand"
+           href="#"
+           data-page-link="accueil">
+            AMA<span>.</span>
+        </a>
+
+        <p>
+            Un univers d'animés à explorer,
+            une communauté à partager.
+        </p>
+
+        <small>
+            © 2026 AMA — Projet de catalogue d'animés.
+        </small>
+
+    </footer>
+
+
+    <!-- BOUTON RETOUR EN HAUT -->
+    <button class="back-top" id="backTop" aria-label="Retour en haut">
+        ↑
+    </button>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
